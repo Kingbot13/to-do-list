@@ -38,6 +38,7 @@ const home = (() => {
 
     const _projectBtn = document.createElement('button');
     _projectBtn.textContent = `New Project`;
+    _projectBtn.classList.add('new-project-btn');
     container.appendChild(_projectBtn);
 
     // create project modal
