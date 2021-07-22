@@ -43,10 +43,21 @@ const home = (() => {
 
     // create project modal
 
-    const projectName = document.createElement('input');
-    projectName.setAttribute('type', 'text');
-    projectName.setAttribute('id', 'project-name');
-    projectName.setAttribute('name', 'project-name');
+    const projectInfo = () => {
+        const projectContainer = document.createElement('div');
+        const projectName = document.createElement('input');
+        projectName.setAttribute('type', 'text');
+        projectName.setAttribute('id', 'project-name');
+        projectName.setAttribute('name', 'project-name');
+
+        const projectSubmitBtn = document.createElement('button');
+        projectSubmitBtn.textContent = `Submit`;
+        projectSubmitBtn.id = `project-submit-btn`;
+
+        projectContainer.append(projectName, projectSubmitBtn);
+
+        return projectContainer;
+    };
 
     // create project factory function
 
@@ -56,8 +67,7 @@ const home = (() => {
         return {name};
     };
 
-    return {container, createInput, createProject, projectName};
+    return {container, createInput, createProject, projectInfo};
 })();
 
 export default home;
-
