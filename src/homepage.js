@@ -12,7 +12,6 @@ const home = (() => {
     const infoCollectContain = document.createElement('div');
     const _infoForm = document.createElement('form');
 
-
     // create input fields
 
     const createInput = (title, todo, textbox) => { // create todo
@@ -38,16 +37,25 @@ const home = (() => {
     // create button to submit project name
 
     const _projectBtn = document.createElement('button');
+    _projectBtn.textContent = `New Project`;
     container.appendChild(_projectBtn);
+
+    // create project modal
+
+    const projectName = document.createElement('input');
+    projectName.setAttribute('type', 'text');
+    projectName.setAttribute('id', 'project-name');
+    projectName.setAttribute('name', 'project-name');
 
     // create project factory function
 
     const createProject = (name) => {
+
         // let name = document.createElement('h3');
         return {name};
     };
 
-    return {container, createInput, createProject};
+    return {container, createInput, createProject, projectName};
 })();
 
 export default home;
