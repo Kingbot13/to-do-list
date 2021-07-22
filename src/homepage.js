@@ -44,7 +44,7 @@ const home = (() => {
     // create project modal
 
     const projectInfo = () => {
-        const projectContainer = document.createElement('div');
+        const projectContainer = document.createElement('form');
         const projectName = document.createElement('input');
         projectName.setAttribute('type', 'text');
         projectName.setAttribute('id', 'project-name');
@@ -53,6 +53,7 @@ const home = (() => {
         const projectSubmitBtn = document.createElement('button');
         projectSubmitBtn.textContent = `Submit`;
         projectSubmitBtn.id = `project-submit-btn`;
+        projectSubmitBtn.type = 'button';
 
         projectContainer.append(projectName, projectSubmitBtn);
 
