@@ -5,15 +5,27 @@ const page = (() => {
     let display = document.querySelector('#content');
     let projectLibrary = []; // store projects
 
+    // update the display with a new project
     const projectDisplay = () => {
         projectLibrary.forEach((item) => {
             let container = document.createElement('div');
+            container.classList.add('project-container');
             let name = document.createElement('p');
             name.textContent = item.name;
 
             container.append(name);
 
             display.appendChild(container);
+        });
+    };
+
+    //add event listeners to project containers
+    const containerEvent = () => { 
+        containerList = document.querySelectorAll('.project-container');
+        containerList.forEach((item) => {
+            item.addEventListener('click', () => {
+                // take user to project page
+            });
         });
     };
 
