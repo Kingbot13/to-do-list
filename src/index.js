@@ -17,15 +17,18 @@ const page = (() => {
             container.append(name);
 
             display.appendChild(container);
+            containerEvent();
         };
     };
 
     //add event listeners to project containers
     const containerEvent = () => { 
-        containerList = document.querySelectorAll('.project-container');
+        let containerList = document.querySelectorAll('.project-container');
         containerList.forEach((item) => {
             item.addEventListener('click', () => {
-                // take user to project page
+                display.removeChild(display.childNodes[0]);
+                let name = item.children[0];
+                display.appendChild(projectPage.getProject(name));
             });
         });
     };

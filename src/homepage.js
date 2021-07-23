@@ -7,32 +7,6 @@ const home = (() => {
 
     container.appendChild(title);
 
-    // create todo info modal
-
-    const infoCollectContain = document.createElement('div');
-    const _infoForm = document.createElement('form');
-
-    // create input fields
-
-    const createInput = (title, todo, textbox) => { // create todo
-
-        let arr = [title, todo, textbox];
-
-        arr.forEach((item) => {
-            let input = document.createElement('input');
-            input.setAttribute('id', `${item}`);
-            input.setAttribute('name', `${item}`);
-            input.setAttribute('type', 'text');
-            input.setAttribute('placeholder', `${item}`);
-
-            _infoForm.appendChild(input);
-
-        });
-
-        infoCollectContain.appendChild(_infoForm);
-
-        return infoCollectContain;
-    };
 
     // create button to submit project name
 
