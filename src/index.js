@@ -1,5 +1,6 @@
 import "./styles.css";
 import home from "./homepage";
+import projectPage from "./projectpage";
 
 const page = (() => {
     let display = document.querySelector('#content');
