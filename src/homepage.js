@@ -45,6 +45,7 @@ const home = (() => {
 
     const projectInfo = () => {
         const projectContainer = document.createElement('form');
+        projectContainer.id = `project-form`;
         const projectName = document.createElement('input');
         projectName.setAttribute('type', 'text');
         projectName.setAttribute('id', 'project-name');
@@ -62,10 +63,10 @@ const home = (() => {
 
     // create project factory function
 
-    const createProject = (name) => {
-
-        // let name = document.createElement('h3');
-        return {name};
+    const createProject = (name, id) => {
+        // add id to prevent duplicates
+        
+        return {name, id};
     };
 
     return {container, createInput, createProject, projectInfo};
