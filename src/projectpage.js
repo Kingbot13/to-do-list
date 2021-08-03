@@ -7,7 +7,13 @@ const projectPage = (() => {
     const getProject = (name) => {
         const title = document.createElement('h2');
         title.textContent = name;
-        container.append(title);
+
+        // create button to add new todo
+
+        const submitBtn = document.createElement('button');
+        submitBtn.textContent = `Add To-do`;
+        submitBtn.type = `button`;
+        container.append(title, submitBtn);
     };
 
     // create todo info modal
