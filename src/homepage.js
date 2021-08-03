@@ -43,7 +43,7 @@ const home = (() => {
         return {name, id};
     };
 
-    return {container, createInput, createProject, projectInfo};
+    return {container, createProject, projectInfo};
 })();
 
 export default home;
