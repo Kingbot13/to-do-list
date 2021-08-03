@@ -6,7 +6,7 @@ const projectPage = (() => {
     
     const getProject = (name) => {
         const title = document.createElement('h2');
-        title.textContent = name;
+        title.textContent = `${name}`;
 
         // create button to add new todo
 
@@ -14,6 +14,7 @@ const projectPage = (() => {
         submitBtn.textContent = `Add To-do`;
         submitBtn.type = `button`;
         container.append(title, submitBtn);
+        return container;
     };
 
     // create todo info modal
@@ -44,7 +45,7 @@ const projectPage = (() => {
     };
     
 
-    return {getProject, createInput};
+    return {getProject, createInput, container};
 })();
 
 export default projectPage;

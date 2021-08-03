@@ -21,13 +21,14 @@ const page = (() => {
         };
     };
 
-    //add event listeners to project containers
+    //add event listeners to project containers to reload page with details of selected project
     const containerEvent = () => { 
         let containerList = document.querySelectorAll('.project-container');
         containerList.forEach((item) => {
             item.addEventListener('click', () => {
                 display.removeChild(display.childNodes[0]);
                 let name = item.children[0];
+
                 display.appendChild(projectPage.getProject(name));
             });
         });
