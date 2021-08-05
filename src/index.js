@@ -2,6 +2,8 @@ import "./styles.css";
 import home from "./homepage";
 import projectPage from "./projectpage";
 
+const log = console.log;
+
 const page = (() => {
     let display = document.querySelector('#content');
     let projectLibrary = []; // store projects
@@ -18,6 +20,9 @@ const page = (() => {
 
             display.appendChild(container);
             containerEvent();
+            
+
+    
         };
     };
 
@@ -32,7 +37,18 @@ const page = (() => {
                 display.appendChild(projectPage.getProject(name));
             });
         });
+      
     };
+
+    const createTodo = () => {
+        const addTodoBtn = document.querySelector('#todo-modal-btn');
+        log(addTodoBtn);
+        addTodoBtn.addEventListener('click', () => {
+            display.appendChild(projectPage.createInput(title, todo, description));
+        });
+        return display;
+    };
+
 
     const displayContent = () => {
         display.appendChild(home.container);
@@ -56,6 +72,7 @@ const page = (() => {
                 display.removeChild(formContainer);
     
                 projectDisplay();
+                createTodo();
 
                 idCounter++;
             });

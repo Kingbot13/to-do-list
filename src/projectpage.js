@@ -13,6 +13,7 @@ const projectPage = (() => {
         const submitBtn = document.createElement('button');
         submitBtn.textContent = `Add To-do`;
         submitBtn.type = `button`;
+        submitBtn.id = `todo-modal-btn`;
         container.append(title, submitBtn);
         return container;
     };
