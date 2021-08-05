@@ -6,7 +6,7 @@ const projectPage = (() => {
     
     const getProject = (name) => {
         const title = document.createElement('h2');
-        title.textContent = `${name}`;
+        title.textContent = name.textContent;
 
         // create button to add new todo
 
