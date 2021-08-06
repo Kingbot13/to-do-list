@@ -38,24 +38,7 @@ const page = (() => {
             });
         });
         
-        // createTodo();
     };
-
-    // const createTodo = () => {
-    //     const addTodoBtn = document.querySelector('#todo-modal-btn');
-    //     log(addTodoBtn);
-
-        // check if button exists
-
-    //     if (addTodoBtn){
-    //         addTodoBtn.addEventListener('click', () => {
-    //             display.appendChild(projectPage.createInput(title, todo, description));
-    //         });
-
-    //     };
-
-    //     return display;
-    // };
 
 
     const displayContent = () => {

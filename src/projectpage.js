@@ -27,15 +27,14 @@ const projectPage = (() => {
 
     const createInput = () => { // create todo
 
-
         let arr = ['title', 'todo', 'textbox'];
 
         arr.forEach((item) => {
             let input = document.createElement('input');
-            input.setAttribute('id', `${item.toString()}`);
-            input.setAttribute('name', `${item.toString()}`);
+            input.setAttribute('id', `${item}`);
+            input.setAttribute('name', `${item}`);
             input.setAttribute('type', 'text');
-            input.setAttribute('placeholder', `${item.toString()}`);
+            input.setAttribute('placeholder', `${item}`);
 
             _infoForm.appendChild(input);
 
