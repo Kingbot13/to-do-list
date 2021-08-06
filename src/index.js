@@ -37,22 +37,35 @@ const page = (() => {
                 display.appendChild(projectPage.getProject(name));
             });
         });
-      
+        
+        // createTodo();
     };
 
-    const createTodo = () => {
-        const addTodoBtn = document.querySelector('#todo-modal-btn');
-        log(addTodoBtn);
-        addTodoBtn.addEventListener('click', () => {
-            display.appendChild(projectPage.createInput(title, todo, description));
-        });
-        return display;
-    };
+    // const createTodo = () => {
+    //     const addTodoBtn = document.querySelector('#todo-modal-btn');
+    //     log(addTodoBtn);
+
+        // check if button exists
+
+    //     if (addTodoBtn){
+    //         addTodoBtn.addEventListener('click', () => {
+    //             display.appendChild(projectPage.createInput(title, todo, description));
+    //         });
+
+    //     };
+
+    //     return display;
+    // };
 
 
     const displayContent = () => {
         display.appendChild(home.container);
 
+        document.addEventListener('click', (e) => {
+            if (e.target && e.target.id === 'todo-modal-btn'){
+                display.appendChild(projectPage.createInput());
+            };
+        });
         
         const projectBtn = document.querySelector('.new-project-btn'); // display input text to allow user to enter new project name
         
@@ -72,7 +85,7 @@ const page = (() => {
                 display.removeChild(formContainer);
     
                 projectDisplay();
-                createTodo();
+
 
                 idCounter++;
             });
