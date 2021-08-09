@@ -46,7 +46,16 @@ const page = (() => {
         document.addEventListener('click', (e) => {
             if (e.target && e.target.id === 'todo-modal-btn'){
                 display.appendChild(projectPage.createInput());
-            };
+
+            } else if (e.target && e.target.id === 'todo-submit'){
+                let title = document.getElementById(title).value;
+                let description = document.getElementById(description).value;
+                
+                let newTodo = todo.createTodo(title, description);
+
+                
+
+            }
         });
         
         const projectBtn = document.querySelector('.new-project-btn'); // display input text to allow user to enter new project name
