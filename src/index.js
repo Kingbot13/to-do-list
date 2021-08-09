@@ -1,6 +1,7 @@
 import "./styles.css";
 import home from "./homepage";
 import projectPage from "./projectpage";
+import todo from "./todo";
 
 const log = console.log;
 
@@ -21,8 +22,6 @@ const page = (() => {
             display.appendChild(container);
             containerEvent();
             
-
-    
         };
     };
 

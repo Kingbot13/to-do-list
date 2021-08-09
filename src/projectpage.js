@@ -40,7 +40,16 @@ const projectPage = (() => {
 
         });
 
-        infoCollectContain.appendChild(_infoForm);
+        // submit button
+
+        const submitBtn = document.createElement('button');
+        submitBtn.textContent = `Submit`;
+        submitBtn.type = `Button`;
+        submitBtn.id = `todo-submit`;
+
+        _infoForm.appendChild(submitBtn);
+
+        infoCollectContain.append(_infoForm);
 
         return infoCollectContain;
     };

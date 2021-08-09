@@ -39,8 +39,12 @@ const home = (() => {
 
     const createProject = (name, id) => {
         // add id to prevent duplicates
+
+        // array to store todos
+
+        const todoArr = [];
         
-        return {name, id};
+        return {name, id, todoArr};
     };
 
     return {container, createProject, projectInfo};
