@@ -27,7 +27,7 @@ const projectPage = (() => {
 
     const createInput = () => { // create todo
 
-        let arr = ['title', 'todo', 'textbox'];
+        let arr = ['title', 'textbox'];
 
         arr.forEach((item) => {
             let input = document.createElement('input');
