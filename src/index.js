@@ -36,7 +36,7 @@ const page = (() => {
                 display.removeChild(display.childNodes[0]);
                 let name = item.children[0];
 
-                item.appendChild(projectPage.getProject(name));
+                display.appendChild(projectPage.getProject(name));
             });
         });
         
@@ -50,14 +50,24 @@ const page = (() => {
             if (e.target && e.target.id === 'todo-modal-btn'){
 
                 // let container = document.querySelector('.project-container');
-                e.path[2].append(projectPage.createInput());
-                log(e.path);
+                // e.preventDefault();
+                // let button = e.target;
+                // log(button.closest('.project-container'));
+                // el.appendChild(projectPage.createInput());
+                display.appendChild(projectPage.createInput());
 
             } else if (e.target && e.target.id === 'todo-submit'){
-                let title = document.getElementById(title).value;
-                let description = document.getElementById(description).value;
+
+                let container = document.querySelector('.project-container');
+                let id = container.getAttribute('data-key');
+                let title = document.getElementById('title').value;
+                let description = document.getElementById('description').value;
                 
                 let newTodo = todo.createTodo(title, description);
+
+                projectLibrary[id].todoArr.push(newTodo);
+
+                log(projectLibrary[id].todoArr);
 
                 
             };

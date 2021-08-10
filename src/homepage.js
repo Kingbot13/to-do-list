@@ -42,7 +42,7 @@ const home = (() => {
 
         // array to store todos
 
-        const todoArr = [];
+        let todoArr = [];
 
         
         
