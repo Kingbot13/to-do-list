@@ -17,6 +17,8 @@ const page = (() => {
             let name = document.createElement('p');
             name.textContent = projectLibrary[i].name;
 
+            container.setAttribute('data-key', i);
+
             container.append(name);
 
             display.appendChild(container);
