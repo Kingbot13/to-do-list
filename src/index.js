@@ -42,6 +42,8 @@ const page = (() => {
         
     };
 
+    // update display with new todos
+
 
     const displayContent = () => {
         display.appendChild(home.container);
@@ -49,11 +51,6 @@ const page = (() => {
         document.addEventListener('click', (e) => {
             if (e.target && e.target.id === 'todo-modal-btn'){
 
-                // let container = document.querySelector('.project-container');
-                // e.preventDefault();
-                // let button = e.target;
-                // log(button.closest('.project-container'));
-                // el.appendChild(projectPage.createInput());
                 display.appendChild(projectPage.createInput());
 
             } else if (e.target && e.target.id === 'todo-submit'){
