@@ -32,10 +32,11 @@ const page = (() => {
         let containerList = document.querySelectorAll('.project-container');
         containerList.forEach((item) => {
             item.addEventListener('click', () => {
+
                 display.removeChild(display.childNodes[0]);
                 let name = item.children[0];
 
-                display.appendChild(projectPage.getProject(name));
+                item.appendChild(projectPage.getProject(name));
             });
         });
         
@@ -47,7 +48,10 @@ const page = (() => {
 
         document.addEventListener('click', (e) => {
             if (e.target && e.target.id === 'todo-modal-btn'){
-                display.appendChild(projectPage.createInput());
+
+                // let container = document.querySelector('.project-container');
+                e.path[2].append(projectPage.createInput());
+                log(e.path);
 
             } else if (e.target && e.target.id === 'todo-submit'){
                 let title = document.getElementById(title).value;
@@ -56,8 +60,7 @@ const page = (() => {
                 let newTodo = todo.createTodo(title, description);
 
                 
-
-            }
+            };
         });
         
         const projectBtn = document.querySelector('.new-project-btn'); // display input text to allow user to enter new project name
