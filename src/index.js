@@ -43,7 +43,27 @@ const page = (() => {
     };
 
     // update display with new todos
+    const updateTodoDisplay = () => {
+        // loop through todo array of associated 
 
+        let container = document.querySelector('.project-container');
+        let id = container.getAttribute('data-key');
+
+        let arr = projectLibrary[id].todoArr;
+
+        const todoContainer = document.createElement('div');
+
+        todoContainer.classList.add('todo-container');
+
+        for (let i = arr.length - 1; i < arr.length; i++){
+            let title = arr[i].title;
+            let description = arr[i].description;
+
+            document.createElement('p').textContent = title.textContent;
+            document.createElement('p').textContent = description.textContent;
+
+        };
+    };
 
     const displayContent = () => {
         display.appendChild(home.container);
