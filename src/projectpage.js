@@ -21,6 +21,7 @@ const projectPage = (() => {
     // create todo info modal
 
     const infoCollectContain = document.createElement('div');
+    infoCollectContain.classList.add('form-container');
     const _infoForm = document.createElement('form');
     
     // create input fields

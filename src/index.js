@@ -84,6 +84,8 @@ const page = (() => {
 
                 projectLibrary[id].todoArr.push(newTodo);
 
+                updateTodoDisplay();
+
                 log(projectLibrary[id].todoArr);
 
                 
