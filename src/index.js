@@ -44,7 +44,7 @@ const page = (() => {
 
     // update display with new todos
     const updateTodoDisplay = () => {
-        // loop through todo array of associated 
+        // loop through todo array of associated project
 
         let container = document.querySelector('.project-container');
         let id = container.getAttribute('data-key');
@@ -59,10 +59,23 @@ const page = (() => {
             let title = arr[i].title;
             let description = arr[i].description;
 
-            document.createElement('p').textContent = title.textContent;
-            document.createElement('p').textContent = description.textContent;
+            let titleText = document.createElement('p');
+            titleText.textContent = title;
+
+            let descriptionText = document.createElement('p');
+            descriptionText.textContent = description;
+
+            // log(title.textContent);
+
+            todoContainer.append(titleText, descriptionText);
 
         };
+
+        log(todoContainer);
+
+        display.appendChild(todoContainer);
+
+
     };
 
     const displayContent = () => {
@@ -85,6 +98,12 @@ const page = (() => {
                 projectLibrary[id].todoArr.push(newTodo);
 
                 updateTodoDisplay();
+
+                // possible bug may arise later here if order of child nodes changes
+
+                display.removeChild(display.childNodes[2]);
+
+
 
                 log(projectLibrary[id].todoArr);
 

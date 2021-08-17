@@ -26,7 +26,7 @@ const projectPage = (() => {
     
     // create input fields
 
-    const createInput = () => { // create todo
+    const createInput = () => {
 
         let arr = ['title', 'description'];
 
