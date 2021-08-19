@@ -75,7 +75,6 @@ const page = (() => {
 
         display.appendChild(todoContainer);
 
-
     };
 
     const displayContent = () => {
@@ -103,11 +102,7 @@ const page = (() => {
 
                 display.removeChild(display.childNodes[2]);
 
-
-
-                log(projectLibrary[id].todoArr);
-
-                
+                log(projectLibrary[id].todoArr);                
             };
         });
         
