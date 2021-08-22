@@ -6,7 +6,16 @@ const todo = (() => {
         return {title, description};
     };
 
-    return {createTodo};
+    const removeTodo = () => {
+        const button = document.createElement('button');
+        button.classList.add('remove-todo');
+        button.textContent = `delete`;
+        button.type = `button`;
+
+        return button;
+    };
+
+    return {createTodo, removeTodo};
 
 })();
 

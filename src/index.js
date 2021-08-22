@@ -59,6 +59,10 @@ const page = (() => {
 
             todoContainer.setAttribute('data-id', i);
 
+            // button to remove todos
+
+            let removeBtn = todo.removeTodo();
+
             let title = arr[i].title;
             let description = arr[i].description;
 
@@ -68,7 +72,7 @@ const page = (() => {
             let descriptionText = document.createElement('p');
             descriptionText.textContent = description;
 
-            todoContainer.append(titleText, descriptionText);
+            todoContainer.append(removeBtn, titleText, descriptionText);
 
             display.appendChild(todoContainer);
         };
