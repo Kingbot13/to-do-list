@@ -112,8 +112,21 @@ const page = (() => {
 
                 display.removeChild(display.childNodes[2]);
 
-                log(projectLibrary[id].todoArr);                
-            };
+                log(projectLibrary[id].todoArr); 
+
+            } else if (e.target && e.target.id === `priority`){
+                let text = e.target;
+
+                if (text.textContent.length < 13){
+                    return text.textContent += '!';
+                } else {
+                    text.textContent = `Priority: !`;
+                };
+
+                log(text.textContent.length);
+                log(text.textContent);
+                
+            }
         });
         
         const projectBtn = document.querySelector('.new-project-btn'); // display input text to allow user to enter new project name

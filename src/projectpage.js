@@ -41,6 +41,26 @@ const projectPage = (() => {
 
         });
 
+        // priority setter
+
+        /* 
+            create p element
+            p.textcontent = !
+            add event listener
+                add "!" to p when clicked.
+                max 3 !'s
+                if p.textcontent = !!!
+                    reset p.textcontent to !
+        */
+
+        let priority = document.createElement('p');
+
+        priority.id = `priority`;
+
+        priority.textContent = `Priority: !`;
+
+        _infoForm.appendChild(priority);
+
         // submit button
 
         const submitBtn = document.createElement('button');
