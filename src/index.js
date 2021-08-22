@@ -70,6 +70,7 @@ const page = (() => {
 
             let title = arr[i].title;
             let description = arr[i].description;
+            let priority = arr[i].priority;
 
             let titleText = document.createElement('p');
             titleText.textContent = title;
@@ -77,7 +78,7 @@ const page = (() => {
             let descriptionText = document.createElement('p');
             descriptionText.textContent = description;
 
-            todoContainer.append(removeBtn, titleText, descriptionText);
+            todoContainer.append(removeBtn, priority, titleText, descriptionText);
 
             display.appendChild(todoContainer);
         };
@@ -104,6 +105,8 @@ const page = (() => {
                 
                 let newTodo = todo.createTodo(title, description);
 
+                newTodo.priority = document.getElementById('priority');
+
                 projectLibrary[id].todoArr.push(newTodo);
 
                 updateTodoDisplay();
@@ -126,7 +129,7 @@ const page = (() => {
                 log(text.textContent.length);
                 log(text.textContent);
                 
-            }
+            };
         });
         
         const projectBtn = document.querySelector('.new-project-btn'); // display input text to allow user to enter new project name
