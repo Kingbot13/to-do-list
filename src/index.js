@@ -50,12 +50,15 @@ const page = (() => {
         let id = container.getAttribute('data-key');
 
         let arr = projectLibrary[id].todoArr;
-
-        const todoContainer = document.createElement('div');
-
-        todoContainer.classList.add('todo-container');
-
+        
         for (let i = arr.length - 1; i < arr.length; i++){
+            let todoContainer = document.createElement('div');
+            todoContainer.classList.add('todo-container');
+
+            // set data attribute on todoContainer to keep track of position in array and display
+
+            todoContainer.setAttribute('data-id', i);
+
             let title = arr[i].title;
             let description = arr[i].description;
 
@@ -65,15 +68,13 @@ const page = (() => {
             let descriptionText = document.createElement('p');
             descriptionText.textContent = description;
 
-            // log(title.textContent);
-
             todoContainer.append(titleText, descriptionText);
 
+            display.appendChild(todoContainer);
         };
 
-        log(todoContainer);
+        // log(todoContainer);
 
-        display.appendChild(todoContainer);
 
     };
 
