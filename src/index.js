@@ -14,12 +14,17 @@ const page = (() => {
         for (let i = projectLibrary.length - 1; i < projectLibrary.length; i++) {
             let container = document.createElement('div');
             container.classList.add('project-container');
+
+            // delete project button
+
+            let removeBtn = projectPage.removeProject();
+
             let name = document.createElement('p');
             name.textContent = projectLibrary[i].name;
 
             container.setAttribute('data-key', i);
 
-            container.append(name);
+            container.append(removeBtn, name);
 
             display.appendChild(container);
             containerEvent();

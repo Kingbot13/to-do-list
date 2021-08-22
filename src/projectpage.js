@@ -54,9 +54,21 @@ const projectPage = (() => {
 
         return infoCollectContain;
     };
+
+    // button to delete project
+
+    const removeProject = () => {
+        const button = document.createElement('button');
+        button.classList.add('remove-project');
+        button.textContent = `delete`;
+        button.type = `button`;
+
+        return button;
+    };
+
     
 
-    return {getProject, createInput, container};
+    return {getProject, createInput, container, removeProject};
 })();
 
 export default projectPage;
