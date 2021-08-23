@@ -19,8 +19,8 @@ const page = (() => {
 
             let removeBtn = projectPage.removeProject();
 
-            let name = document.createElement('p');
-            name.textContent = projectLibrary[i].name;
+            // let name = document.createElement('p');
+            // name.textContent = projectLibrary[i].name;
 
             container.setAttribute('data-key', i);
 
@@ -118,6 +118,9 @@ const page = (() => {
                 log(projectLibrary[id].todoArr); 
 
             } else if (e.target && e.target.id === `priority`){
+
+                // bug: priority still changes even after submitting todo details
+
                 let text = e.target;
 
                 if (text.textContent.length < 13){
@@ -129,6 +132,19 @@ const page = (() => {
                 log(text.textContent.length);
                 log(text.textContent);
                 
+            } else if (e.target && e.target.classList.contains(`remove-project`)){
+                let button = e.target;
+                // log(button);
+                let container = e.path[1];
+                log(container);
+
+                // remove project from array
+
+                
+
+                projectLibrary.splice(parseInt(container.getAttribute('data-key')), 1);
+
+                projectDisplay();
             };
         });
         
