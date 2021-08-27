@@ -19,8 +19,8 @@ const page = (() => {
 
             let removeBtn = projectPage.removeProject();
 
-            // let name = document.createElement('p');
-            // name.textContent = projectLibrary[i].name;
+            let name = document.createElement('p');
+            name.textContent = projectLibrary[i].name;
 
             container.setAttribute('data-key', i);
 
