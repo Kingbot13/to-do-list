@@ -5,7 +5,7 @@ const projectPage = (() => {
     const container = document.createElement('div');
     
     const getProject = (name) => {
-        const title = document.createElement('h2');
+        const title = document.createElement('h1');
         title.textContent = name.textContent;
 
         // create button to add new todo

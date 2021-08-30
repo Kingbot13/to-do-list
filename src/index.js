@@ -19,33 +19,35 @@ const page = (() => {
 
             let removeBtn = projectPage.removeProject();
 
-            let name = document.createElement('p');
+            let name = document.createElement('h2');
             name.textContent = projectLibrary[i].name;
+
+            name.classList.add('project-name');
 
             container.setAttribute('data-key', i);
 
             container.append(removeBtn, name);
 
             display.appendChild(container);
-            containerEvent();
+            // containerEvent();
             
         };
     };
 
     //add event listeners to project containers to reload page with details of selected project
-    const containerEvent = () => { 
-        let containerList = document.querySelectorAll('.project-container');
-        containerList.forEach((item) => {
-            item.addEventListener('click', () => {
+    // const containerEvent = () => { 
+    //     let containerList = document.querySelectorAll('.project-container');
+    //     containerList.forEach((item) => {
+    //         item.addEventListener('click', () => {
 
-                display.removeChild(display.childNodes[0]);
-                let name = item.children[0];
+    //             display.removeChild(display.childNodes[0]);
+    //             let name = item.children[0];
 
-                display.appendChild(projectPage.getProject(name));
-            });
-        });
+    //             display.appendChild(projectPage.getProject(name));
+    //         });
+    //     });
         
-    };
+    // };
 
     // update display with new todos
     const updateTodoDisplay = () => {
@@ -145,6 +147,23 @@ const page = (() => {
                 projectLibrary.splice(parseInt(container.getAttribute('data-key')), 1);
 
                 projectDisplay();
+            } else if (e.target && e.target.classList.contains('project-name')){
+                // event listener for project containers to update display with selected project's info
+
+                let name = e.target;
+                
+                // log(project);
+
+                display.removeChild(display.childNodes[0]);
+
+                // let name = project.children[1];
+
+                display.appendChild(projectPage.getProject(name));
+
+                name.parentNode.remove();
+
+                // e.target.classList.toggle('project-name');
+
             };
         });
         
