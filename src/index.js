@@ -146,7 +146,13 @@ const page = (() => {
 
                 projectLibrary.splice(parseInt(container.getAttribute('data-key')), 1);
 
-                projectDisplay();
+                if (projectLibrary.length > 1){
+                    projectDisplay();
+                } else {
+                    button.parentNode.remove();
+                };
+
+
             } else if (e.target && e.target.classList.contains('project-name')){
                 // event listener for project containers to update display with selected project's info
 
