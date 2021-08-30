@@ -34,26 +34,11 @@ const page = (() => {
         };
     };
 
-    //add event listeners to project containers to reload page with details of selected project
-    // const containerEvent = () => { 
-    //     let containerList = document.querySelectorAll('.project-container');
-    //     containerList.forEach((item) => {
-    //         item.addEventListener('click', () => {
-
-    //             display.removeChild(display.childNodes[0]);
-    //             let name = item.children[0];
-
-    //             display.appendChild(projectPage.getProject(name));
-    //         });
-    //     });
-        
-    // };
-
     // update display with new todos
     const updateTodoDisplay = () => {
         // loop through todo array of associated project
 
-        let container = document.querySelector('.project-container');
+        let container = document.querySelector('.project-page-container');
         let id = container.getAttribute('data-key');
 
         let arr = projectLibrary[id].todoArr;
@@ -100,7 +85,7 @@ const page = (() => {
 
             } else if (e.target && e.target.id === 'todo-submit'){
 
-                let container = document.querySelector('.project-container');
+                let container = document.querySelector('.project-page-container');
                 let id = container.getAttribute('data-key');
                 let title = document.getElementById('title').value;
                 let description = document.getElementById('description').value;
@@ -142,8 +127,6 @@ const page = (() => {
 
                 // remove project from array
 
-                
-
                 projectLibrary.splice(parseInt(container.getAttribute('data-key')), 1);
 
                 if (projectLibrary.length > 1){
@@ -157,18 +140,18 @@ const page = (() => {
                 // event listener for project containers to update display with selected project's info
 
                 let name = e.target;
-                
-                // log(project);
+
+                let id = name.parentNode.getAttribute('data-key');
+
+                let newContainer = projectPage.getProject(name);
+
+                newContainer.setAttribute('data-key', id);
 
                 display.removeChild(display.childNodes[0]);
 
-                // let name = project.children[1];
-
-                display.appendChild(projectPage.getProject(name));
+                display.appendChild(newContainer);
 
                 name.parentNode.remove();
-
-                // e.target.classList.toggle('project-name');
 
             };
         });

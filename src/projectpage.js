@@ -2,9 +2,12 @@
 // shows info about the project and its todos
 
 const projectPage = (() => {
-    const container = document.createElement('div');
     
     const getProject = (name) => {
+        const container = document.createElement('div');
+
+        container.classList.add('project-page-container');
+
         const title = document.createElement('h1');
         title.textContent = name.textContent;
 
@@ -78,7 +81,7 @@ const projectPage = (() => {
 
     
 
-    return {getProject, createInput, container, removeProject};
+    return {getProject, createInput, removeProject};
 })();
 
 export default projectPage;
