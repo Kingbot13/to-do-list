@@ -100,7 +100,7 @@ const page = (() => {
 
                 // possible bug may arise later here if order of child nodes changes
 
-                display.removeChild(display.childNodes[2]);
+                display.removeChild(display.childNodes[1]);
 
                 log(projectLibrary[id].todoArr); 
 
