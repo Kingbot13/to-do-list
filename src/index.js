@@ -184,6 +184,10 @@ const page = (() => {
 
                 name.parentNode.remove();
 
+                if (projectLibrary[id]){
+                    updateTodoDisplay();
+                };
+
             } else if (e.target && e.target.classList.contains('remove-todo')){
                 // delete todo button
 
