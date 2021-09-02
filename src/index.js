@@ -8,6 +8,7 @@ const log = console.log;
 const page = (() => {
     let display = document.querySelector('#content');
     let projectLibrary = []; // store projects
+    let storage = window.localStorage;
 
     // update the display with a new project
     const projectDisplay = () => {
@@ -29,7 +30,6 @@ const page = (() => {
             container.append(removeBtn, name);
 
             display.appendChild(container);
-            // containerEvent();
             
         };
     };
@@ -75,8 +75,29 @@ const page = (() => {
 
     };
 
+    // save projects and todos (todos are properties of projects so don't need to directly save them)
+
+    const save = () => {
+        storage.setItem('projects', JSON.stringify(projectLibrary));
+    };
+
     const displayContent = () => {
+
         display.appendChild(home.container);
+
+        // display projects if any exist in storage
+
+        if (storage.getItem('projects')){
+
+            let projects = JSON.parse(storage.getItem('projects'));
+
+            for (let i = 0; i < projects.length; i++){
+                projectLibrary.push(projects[i]);
+            };
+
+            log(projectLibrary);
+            projectDisplay();
+        };
 
         document.addEventListener('click', (e) => {
             if (e.target && e.target.id === 'todo-modal-btn'){
@@ -102,7 +123,12 @@ const page = (() => {
 
                 display.removeChild(display.childNodes[1]);
 
-                log(projectLibrary[id].todoArr); 
+                // log(projectLibrary[id].todoArr); 
+
+                save();     
+                
+                log(storage.getItem('projects'));
+                
 
             } else if (e.target && e.target.id === `priority`){
 
@@ -134,6 +160,11 @@ const page = (() => {
                 } else {
                     button.parentNode.remove();
                 };
+
+                save();
+
+                log(storage.getItem('projects'));
+
 
 
             } else if (e.target && e.target.classList.contains('project-name')){
@@ -173,6 +204,11 @@ const page = (() => {
                 } else {
                     e.target.parentNode.remove();
                 };
+
+                save();
+
+                log(storage.getItem('projects'));
+
             };
         });
         
@@ -195,6 +231,9 @@ const page = (() => {
     
                 projectDisplay();
 
+                save();
+
+                log(storage.getItem('projects'));
 
                 idCounter++;
             });
