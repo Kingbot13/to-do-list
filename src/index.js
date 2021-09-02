@@ -153,6 +153,26 @@ const page = (() => {
 
                 name.parentNode.remove();
 
+            } else if (e.target && e.target.classList.contains('remove-todo')){
+                // delete todo button
+
+                let project = document.querySelector('.project-page-container');
+
+                let projectId = parseInt(project.getAttribute('data-key'));
+
+                let projectTodos = projectLibrary[projectId].todoArr;
+
+                let todoContainer = document.querySelector('.todo-container');
+
+                let todoId = parseInt(todoContainer.getAttribute('data-id'));
+
+                projectTodos.splice(todoId, 1);
+
+                if (projectTodos.length > 1){
+                    updateTodoDisplay();
+                } else {
+                    e.target.parentNode.remove();
+                };
             };
         });
         
