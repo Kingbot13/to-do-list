@@ -2,8 +2,8 @@
 
 const todo = (() => {
 
-    const createTodo = (title, description) => {
-        return {title, description};
+    const createTodo = (title, description, priority) => {
+        return {title, description, priority};
     };
 
     const removeTodo = () => {

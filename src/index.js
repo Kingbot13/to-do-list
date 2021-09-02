@@ -110,10 +110,10 @@ const page = (() => {
                 let id = container.getAttribute('data-key');
                 let title = document.getElementById('title').value;
                 let description = document.getElementById('description').value;
+                let priority = document.getElementById('priority').textContent;
                 
-                let newTodo = todo.createTodo(title, description);
+                let newTodo = todo.createTodo(title, description, priority);
 
-                newTodo.priority = document.getElementById('priority');
 
                 projectLibrary[id].todoArr.push(newTodo);
 
@@ -135,6 +135,8 @@ const page = (() => {
                 // bug: priority still changes even after submitting todo details
 
                 let text = e.target;
+
+
 
                 if (text.textContent.length < 13){
                     return text.textContent += '!';
