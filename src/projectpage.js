@@ -54,6 +54,18 @@ const projectPage = (() => {
 
         _infoForm.appendChild(priority);
 
+        // due date
+
+        let dueDate = document.createElement('input');
+
+        dueDate.id = `due-date`;
+
+        dueDate.name = `due-date`;
+
+        dueDate.type = `date`;
+
+        _infoForm.appendChild(dueDate);
+
         // submit button
 
         const submitBtn = document.createElement('button');

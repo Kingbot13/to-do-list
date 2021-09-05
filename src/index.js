@@ -58,6 +58,12 @@ const page = (() => {
             let title = arr[i].title;
             let description = arr[i].description;
             let priority = arr[i].priority;
+            let dueDate = arr[i].dueDate;
+
+            let dateContainer = document.createElement('div');
+
+            dateContainer.textContent = `Due: ${dueDate}`;
+
 
             let titleText = document.createElement('p');
             titleText.textContent = title;
@@ -65,7 +71,7 @@ const page = (() => {
             let descriptionText = document.createElement('p');
             descriptionText.textContent = description;
 
-            todoContainer.append(removeBtn, priority, titleText, descriptionText);
+            todoContainer.append(removeBtn, priority, titleText, descriptionText, dateContainer);
 
             display.appendChild(todoContainer);
         };
@@ -111,8 +117,9 @@ const page = (() => {
                 let title = document.getElementById('title').value;
                 let description = document.getElementById('description').value;
                 let priority = document.getElementById('priority').textContent;
+                let dueDate = document.getElementById('due-date').value;
                 
-                let newTodo = todo.createTodo(title, description, priority);
+                let newTodo = todo.createTodo(title, description, priority, dueDate);
 
 
                 projectLibrary[id].todoArr.push(newTodo);
